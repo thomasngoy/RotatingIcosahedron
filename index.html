@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Font Links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <!--Title of the Page-->
+    <title>3D Animation: Rotating Icosahedron</title>
+
+    <!--CSS Stylization-->
+    <style>
+        body{
+            margin: 0;
+        }
+        canvas{
+            width: 100%;
+            height: 100%;
+            background: url(js/textures/1270158.png);
+            background-size: cover;
+        }
+        #info {
+            color: #000000;
+            position: absolute;
+            left: 10px;
+            width: 100%;
+            text-align: left;
+            z-index: 100;
+            display:block;
+        }
+        h1 { 
+            color: #111; 
+            font-family: 'Roboto Mono', monospace;
+            font-size: 50px; 
+            font-weight: bold; 
+            letter-spacing: 1px; 
+            text-align: left; 
+        }
+        h2.sub { 
+            color: #111; 
+            font-family: 'Roboto Mono', monospace;
+            font-size: 20px; 
+            font-weight: bold; 
+            letter-spacing: 1px; 
+            position: absolute;
+            top: 100px;
+            left: 10px;
+            z-index: 100;
+            text-align: left; 
+        }
+        div.header {
+            position: absolute;
+            left: 50px;
+            top: 45px;
+            width: 700px;
+            height: 175px;
+            border-style: solid;
+            z-index: 100;
+            background: rgb(112,128,144, 0.8);
+        }
+        div.desc {
+            position: absolute;
+            left: 1300px;
+            top: 45px;
+            width: 550px;
+            height: 500px;
+            border-style: solid;
+            z-index: 100;
+            background: rgb(112,128,144, 0.8);
+        }
+        p { 
+            color: #111; 
+            font-family: 'Roboto Mono', monospace;
+            top: -10px;
+            font-size: 20px; 
+            font-weight: bold; 
+            letter-spacing: 1px; 
+            position: absolute;
+            left: 10px;
+            z-index: 100;
+            text-align: left; 
+        }
+    </style>
+</head>
+
+<!--Body of the page: This also includes the THREE.JS and main.js script tags-->
+<body>
+    <div class='header'>
+        <h1 id="info">ROTATING ICOSAHEDRON</h1>
+        <h2 class="sub">Technologies Used: HTML, CSS, JavaScript, THREE.js</h2>
+    </div>
+    <div class='desc'>
+        <p>
+            The Icosahedron seen on screen was made using a combination of HTML, CSS, and JavaScript.
+            Using the THREE.js library, I created many JS objects that interact with one another to render, animate, and display the polygon.
+            Along the way, lighting was integrated using a spotlight object as well as a background and floor using planes.
+            The rotation speed is easily changed as well as the colors of all objects seen on screen.
+            The most challenging part of this project was creating a light source that I found acceptable.
+            Lighting in computer graphics is often times hard to debug and configure, and I found that the SpotLight object was a suitable fit for this project.
+        </p>
+    </div>
+    <script src="js/three.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
