@@ -4,8 +4,16 @@
 //Initialize the necessary global variables/objects
 let scene, camera, renderer, cube, plane, line;
 
+//Slider initialization
+var slider = document.getElementById("myRange");
+
 //This changes the speed of rotation of the Icosahedron
-let shapeRotationSpeed = 0.001;
+let shapeRotationSpeed = 50 * 0.0001;
+
+slider.oninput = function() {
+    console.log(slider.value)
+    shapeRotationSpeed = slider.value * .0001;
+}
 
 //init()
 //This function will initialize all of the Objects necessary to display our scene.
@@ -40,6 +48,7 @@ function init(){
 
     //Changes the position of the Icosahedron
     cube.position.y = 3;
+    cube.position.x = 3;
 
     //This code below is used to create the outline seen in the 3D Animation
     //It basically creates a wireframe that is animated in the same way as the Icosahedron
@@ -47,6 +56,7 @@ function init(){
     const linemat = new THREE.LineBasicMaterial( {color: 0x000000, linewidth: 10 });
     line = new THREE.LineSegments( edges, linemat);
     line.position.y = 3;
+    line.position.x = 3;
 
     //Adding the objects to the scene
     scene.add(line);
@@ -112,6 +122,18 @@ function resize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+function changeRed(){
+    cube.material.color.setHex( 0xc22e2e );
+}
+
+function changeBlue(){
+    cube.material.color.setHex( 0x2e5ddd );
+}
+
+function changeYellow(){
+    cube.material.color.setHex( 0xe4c82c );
 }
 
 window.addEventListener('resize', resize, false);

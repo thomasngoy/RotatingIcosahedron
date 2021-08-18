@@ -12,78 +12,11 @@
     <!--Title of the Page-->
     <title>3D Animation: Rotating Icosahedron</title>
 
+    <!--Link Stylesheet-->
+    <link rel="stylesheet" href="style.css">
+
     <!--CSS Stylization-->
     <style>
-        body{
-            margin: 0;
-        }
-        canvas{
-            width: 100%;
-            height: 100%;
-            background: url(js/textures/1270158.png);
-            background-size: cover;
-        }
-        #info {
-            color: #000000;
-            position: absolute;
-            left: 10px;
-            width: 100%;
-            text-align: left;
-            z-index: 100;
-            display:block;
-        }
-        h1 { 
-            color: #111; 
-            font-family: 'Roboto Mono', monospace;
-            font-size: 50px; 
-            font-weight: bold; 
-            letter-spacing: 1px; 
-            text-align: left; 
-        }
-        h2.sub { 
-            color: #111; 
-            font-family: 'Roboto Mono', monospace;
-            font-size: 20px; 
-            font-weight: bold; 
-            letter-spacing: 1px; 
-            position: absolute;
-            top: 100px;
-            left: 10px;
-            z-index: 100;
-            text-align: left; 
-        }
-        div.header {
-            position: absolute;
-            left: 50px;
-            top: 45px;
-            width: 700px;
-            height: 175px;
-            border-style: solid;
-            z-index: 100;
-            background: rgb(112,128,144, 0.8);
-        }
-        div.desc {
-            position: absolute;
-            left: 1300px;
-            top: 45px;
-            width: 550px;
-            height: 500px;
-            border-style: solid;
-            z-index: 100;
-            background: rgb(112,128,144, 0.8);
-        }
-        p { 
-            color: #111; 
-            font-family: 'Roboto Mono', monospace;
-            top: -10px;
-            font-size: 20px; 
-            font-weight: bold; 
-            letter-spacing: 1px; 
-            position: absolute;
-            left: 10px;
-            z-index: 100;
-            text-align: left; 
-        }
     </style>
 </head>
 
@@ -93,8 +26,9 @@
         <h1 id="info">ROTATING ICOSAHEDRON</h1>
         <h2 class="sub">Technologies Used: HTML, CSS, JavaScript, THREE.js</h2>
     </div>
+
     <div class='desc'>
-        <p>
+        <p class='desc'>
             The Icosahedron seen on screen was made using a combination of HTML, CSS, and JavaScript.
             Using the THREE.js library, I created many JS objects that interact with one another to render, animate, and display the polygon.
             Along the way, lighting was integrated using a spotlight object as well as a background and floor using planes.
@@ -103,6 +37,16 @@
             Lighting in computer graphics is often times hard to debug and configure, and I found that the SpotLight object was a suitable fit for this project.
         </p>
     </div>
+
+    <div class="slidecontainer">
+        <p class='slidedesc'>Adjust Rotation Speed</p>
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    </div>
+
+    <button onclick="changeRed()" class='button button1'></button>
+    <button onclick="changeBlue()"class='button button2'></button>
+    <button onclick="changeYellow()"class='button button3'></button>
+
     <script src="js/three.js"></script>
     <script src="js/main.js"></script>
 </body>
