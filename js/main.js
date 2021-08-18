@@ -107,6 +107,15 @@ function animate() {
     renderer.render(scene, camera);
 }
 
+//
+function resize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+window.addEventListener('resize', resize, false);
+
 //Here we call both the init() and animate() functions to bring the animation to life.
 init();
 animate();
